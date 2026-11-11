@@ -159,7 +159,7 @@ Scope: Audio only. Keyboard Hook, Hit Log and Decibel Meter UI belong to later s
 
 ### Task 3.5 – Audio Cleanup and Stability
 
-- Status: TODO
+- Status: DONE
 - Release AudioContext and associated resources appropriately.
 - Avoid duplicate resources in React StrictMode.
 - Verify rapid clicks, errors, mount and unmount behavior.
@@ -293,7 +293,7 @@ Scope: Audio only. Keyboard Hook, Hit Log and Decibel Meter UI belong to later s
 
 **TASK 12 – Implement Audio Engine**
 
-- Status: IN PROGRESS
+- Status: DONE
 - Files: `audio/audioEngine.js`
 - Goal: Provide an audio playback interface based on browser audio capabilities.
 - Criteria: Audio resources are initialized safely and cleaned up when appropriate.

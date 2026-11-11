@@ -1,3 +1,5 @@
+import { stopAllDrumSounds } from './playDrumSound.js'
+
 export function createDrumAudioEngine() {
   let audioContext = null
   let masterGain = null
@@ -60,12 +62,18 @@ export function createDrumAudioEngine() {
     audioContext = null
     masterGain = null
 
-    if (output) {
-      output.disconnect()
-    }
+    try {
+      if (context && context.state !== 'closed') {
+        stopAllDrumSounds(context)
+      }
+    } finally {
+      if (output) {
+        output.disconnect()
+      }
 
-    if (context && context.state !== 'closed') {
-      await context.close()
+      if (context && context.state !== 'closed') {
+        await context.close()
+      }
     }
   }
 

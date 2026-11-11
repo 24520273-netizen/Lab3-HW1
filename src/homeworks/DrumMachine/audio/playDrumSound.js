@@ -2,6 +2,7 @@ import { drumSoundPresets } from '../data/drumSoundPresets.js'
 
 const noiseBufferCache = new WeakMap()
 const VOICE_GAIN = 0.32
+const activeVoices = new WeakMap()
 
 function getNoiseBuffer(context, soundId, durationSeconds) {
   let cache = noiseBufferCache.get(context)
@@ -27,17 +28,66 @@ function getNoiseBuffer(context, soundId, durationSeconds) {
   return buffer
 }
 
-function scheduleSource(source, connectedNodes, startTime, endTime) {
-  source.onended = () => {
+function scheduleSource(context, source, connectedNodes, startTime, endTime) {
+  let voices = activeVoices.get(context)
+
+  if (!voices) {
+    voices = new Set()
+    activeVoices.set(context, voices)
+  }
+
+  let cleaned = false
+
+  const cleanup = () => {
+    if (cleaned) return
+    cleaned = true
+
+    source.onended = null
     source.disconnect()
 
     for (const node of connectedNodes) {
       node.disconnect()
     }
+
+    voices.delete(stopVoice)
+
+    if (voices.size === 0) {
+      activeVoices.delete(context)
+    }
   }
 
-  source.start(startTime)
-  source.stop(endTime)
+  const stopVoice = () => {
+    try {
+      source.stop()
+    } catch (error) {
+      if (error.name !== 'InvalidStateError') {
+        throw error
+      }
+    } finally {
+      cleanup()
+    }
+  }
+
+  source.onended = cleanup
+  voices.add(stopVoice)
+
+  try {
+    source.start(startTime)
+    source.stop(endTime)
+  } catch (error) {
+    cleanup()
+    throw error
+  }
+}
+
+export function stopAllDrumSounds(context) {
+  const voices = activeVoices.get(context)
+
+  if (!voices) return
+
+  for (const stopVoice of [...voices]) {
+    stopVoice()
+  }
 }
 
 function playTone(context, output, preset, now, endTime) {
@@ -62,7 +112,7 @@ function playTone(context, output, preset, now, endTime) {
   oscillator.connect(gain)
   gain.connect(output)
 
-  scheduleSource(oscillator, [gain], now, endTime)
+  scheduleSource(context, oscillator, [gain], now, endTime)
 }
 
 function playNoise(context, output, soundId, preset, now, endTime) {
@@ -101,7 +151,7 @@ function playNoise(context, output, soundId, preset, now, endTime) {
   filter.connect(gain)
   gain.connect(output)
 
-  scheduleSource(source, [filter, gain], now, endTime)
+  scheduleSource(context, source, [filter, gain], now, endTime)
 }
 
 export function playDrumSound(context, output, soundId) {
