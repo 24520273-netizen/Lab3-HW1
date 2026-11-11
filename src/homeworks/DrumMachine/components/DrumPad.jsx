@@ -12,6 +12,8 @@ export default function DrumPad({
       type="button"
       className={styles.pad}
       aria-pressed={Boolean(isActive)}
+      aria-label={`${pad.soundName} drum pad, shortcut ${pad.keyLabel}`}
+      aria-keyshortcuts={pad.keyLabel}
       onClick={() => onTrigger?.(pad.id)}
       onPointerDown={(event) => {
         if (event.pointerType !== 'mouse' || event.button === 0) {
@@ -25,6 +27,9 @@ export default function DrumPad({
     >
       <kbd className={styles.key}>{pad.keyLabel}</kbd>
       <span className={styles.sound}>{pad.soundName}</span>
+      <span className={styles.state} aria-hidden="true">
+        {isActive ? 'Pressed' : ''}
+      </span>
     </button>
   )
 }

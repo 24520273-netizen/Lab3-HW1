@@ -229,7 +229,7 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 ### Task 5.2 – Accessibility Improvements
 
-- Status: TODO
+- Status: DONE
 - Files: DrumPad.jsx, DrumPad.module.css, DrumKit.jsx, DrumKit.module.css, App.jsx
 - Improve accessible names, shortcut instructions and visible pressed feedback.
 - Preserve native buttons, focus-visible and aria-pressed.
@@ -433,7 +433,7 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 **TASK 19 – Improve Focus and Pressed Feedback**
 
-- Status: TODO
+- Status: DONE
 - Files: Drum Pad CSS and component files
 - Goal: Provide clear focus, pressed and released states without relying only on color.
 - Criteria: Visible focus and meaningful active-state feedback.

@@ -10,11 +10,20 @@ export default function DrumKit({
   onRelease,
 }) {
   const headingId = useId()
+  const instructionsId = useId()
 
   return (
-    <section className={styles.kit} aria-labelledby={headingId}>
+    <section
+      className={styles.kit}
+      aria-labelledby={headingId}
+      aria-describedby={instructionsId}
+    >
       <header className={styles.header}>
         <h2 id={headingId}>Drum Pads</h2>
+        <p id={instructionsId} className={styles.instructions}>
+          Use W, A, S, D, J, K or L to play.
+          You can also focus a pad and press Enter or Space.
+        </p>
       </header>
 
       <ul className={styles.grid}>

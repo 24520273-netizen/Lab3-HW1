@@ -120,7 +120,7 @@ function App() {
     <main>
       <header>
         <h1>Production Studio Drum Kit</h1>
-        <p>Click a drum pad to play its sound.</p>
+        <p>Click a drum pad or use W, A, S, D, J, K, L to play.</p>
       </header>
 
       <DrumKit

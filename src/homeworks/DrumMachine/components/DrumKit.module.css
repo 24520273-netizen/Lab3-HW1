@@ -63,3 +63,12 @@
     margin-bottom: 18px;
   }
 }
+
+.instructions {
+  max-width: 600px;
+  margin: 12px auto 0;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: center;
+}
