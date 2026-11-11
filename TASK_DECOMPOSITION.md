@@ -65,7 +65,7 @@ Scope: No Audio Engine, global Keyboard Hook, Hit Log or Decibel Meter implement
 
 ### Task 2.2 – Reusable DrumPad
 
-- Status: TODO
+- Status: DONE
 - Related original task: TASK 05
 - Files: `components/DrumPad.jsx`
 - Implement a semantic button with props and `aria-pressed`.
@@ -166,7 +166,7 @@ Scope: No Audio Engine, global Keyboard Hook, Hit Log or Decibel Meter implement
 
 **TASK 05 – Implement Reusable Drum Pad Component**
 
-- Status: TODO
+- Status: DONE
 - Files: `components/DrumPad.jsx`
 - Goal: Create a reusable native button representing a drum pad.
 - Criteria: Correct label, keyboard hint, button semantics and `aria-pressed` state.
