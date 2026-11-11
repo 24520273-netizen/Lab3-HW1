@@ -75,7 +75,7 @@ Scope: No Audio Engine, global Keyboard Hook, Hit Log or Decibel Meter implement
 
 ### Task 2.3 – DrumKit Layout
 
-- Status: TODO
+- Status: DONE
 - Related original tasks: TASK 03 and TASK 05
 - Files: `components/DrumKit.jsx`
 - Render all seven DrumPad components using stable IDs.
