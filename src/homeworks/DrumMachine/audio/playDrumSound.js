@@ -94,7 +94,7 @@ function playTone(context, output, preset, now, endTime) {
   const oscillator = context.createOscillator()
   const gain = context.createGain()
 
-  oscillator.type = 'sine'
+  oscillator.type = preset.mode === 'tone' ? 'triangle' : 'sine'
 
   oscillator.frequency.setValueAtTime(preset.toneStartHz, now)
   oscillator.frequency.exponentialRampToValueAtTime(
@@ -103,7 +103,7 @@ function playTone(context, output, preset, now, endTime) {
   )
 
   gain.gain.setValueAtTime(
-    Math.max(0.0001, preset.toneGain * VOICE_GAIN),
+    Math.max(0.0001, preset.toneGain * VOICE_GAIN * (preset.mode === 'tone' ? 1.5 : 1)),
     now
   )
 
