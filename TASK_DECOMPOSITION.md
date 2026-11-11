@@ -96,7 +96,7 @@ Scope: No Audio Engine, global Keyboard Hook, Hit Log or Decibel Meter implement
 
 ### Task 2.5 – Responsive CSS Modules
 
-- Status: TODO
+- Status: DONE
 - Related original task: TASK 06
 - Files: `components/DrumPad.module.css`, `components/DrumKit.module.css`
 - Apply studio styling using CSS Modules and CSS Custom Properties.
@@ -175,7 +175,7 @@ Scope: No Audio Engine, global Keyboard Hook, Hit Log or Decibel Meter implement
 
 **TASK 06 – Create Studio Layout and Theme**
 
-- Status: TODO
+- Status: DONE
 - Files: `DrumMachine.module.css`, `DrumPad.module.css`
 - Goal: Build a studio-themed layout using CSS Modules and CSS Custom Properties.
 - Criteria: Clear pad arrangement, readable text and consistent styling.
