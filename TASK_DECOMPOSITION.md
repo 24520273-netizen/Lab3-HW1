@@ -1,4 +1,4 @@
-# TASK DECOMPOSITION – LAB 03 HOMEWORK 1
+﻿# TASK DECOMPOSITION – LAB 03 HOMEWORK 1
 
 ## 1. Project Information
 
@@ -60,7 +60,7 @@ This structure is a proposal. Only create files when implementing the relevant t
 
 **TASK 01 – Create Task Decomposition**
 
-- Status: IN PROGRESS
+- Status: DONE
 - Files: `TASK_DECOMPOSITION.md`
 - Goal: Document requirements, architecture, task dependencies, verification and planned commits.
 - Criteria: All HW1 requirements mapped to implementation tasks.
@@ -69,7 +69,7 @@ This structure is a proposal. Only create files when implementing the relevant t
 
 **TASK 02 – Document Application Architecture**
 
-- Status: TODO
+- Status: DONE
 - Files: `ARCHITECTURE.md`
 - Goal: Describe component contracts, data flow, audio lifecycle and keyboard state management.
 - Criteria: Clear separation of UI, keyboard logic, audio engine and visual feedback.
@@ -340,7 +340,7 @@ This structure is a proposal. Only create files when implementing the relevant t
 
 ## 6. Verification Checklist
 
-- [ ] React 19 and Vite verified
+- [x] React 19 and Vite verified
 - [x] Initial production build passed
 - [ ] Lint verification recorded
 - [ ] Seven keyboard mappings work
@@ -366,9 +366,9 @@ This structure is a proposal. Only create files when implementing the relevant t
 
 ## 7. Current Progress
 
-- Completed: TASK 00
-- In progress: TASK 01
-- Remaining: TASK 02–25
+- Completed: TASK 00–02
+- In progress: None
+- Remaining: TASK 03–25
 - Initial commit: `1a588ae`
 - Planned number of additional commits: up to 25, depending on independently verifiable changes.
 - GitHub push: Not performed.
