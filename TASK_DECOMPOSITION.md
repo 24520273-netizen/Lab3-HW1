@@ -174,6 +174,42 @@ Scope: Audio only. Keyboard Hook, Hit Log and Decibel Meter UI belong to later s
 - Update statuses only after actual verification.
 - Do not push or rewrite Git history without permission.
 
+## 3C. Step 4 Keyboard Controls
+
+Goal: Provide physical keyboard controls for seven Drum Pads without duplicating audio logic.
+
+### Task 4.1 – Keyboard Hook
+
+- Status: DONE
+- Files: `src/homeworks/DrumMachine/hooks/useDrumKeyboard.js`
+- Map KeyboardEvent.code to the existing drum pad configuration.
+- Handle keydown, keyup, repeat guard and focus isolation.
+- Release held keys when focus is lost or the page becomes hidden.
+- Ensure effect cleanup and callback freshness under StrictMode.
+- Verify mapping, input guards, lint and production build.
+- Commit: `feat(hw1): implement drum keyboard controls`
+
+### Task 4.2 – React Integration and Active States
+
+- Status: TODO
+- Files: `src/App.jsx`, `components/DrumKit.jsx`, `components/DrumPad.jsx`
+- Reuse the existing audio trigger callback.
+- Pass active pad IDs to DrumKit and DrumPad.
+- Synchronize visual feedback and aria-pressed.
+- Preserve native button click, Enter and Space activation.
+- Support pointer press/release and interruption.
+- Verify keyboard, pointer, focus, blur and visibility behaviors.
+- Commit: `feat(hw1): synchronize keyboard and drum pad states`
+
+### Step 4 Constraints
+
+- No Audio Engine rewrite.
+- No Visual Hit Log or Decibel Meter implementation.
+- No new dependencies.
+- Exactly two planned atomic commits unless a verified independent fix requires another.
+- Follow Implement, Verify, Commit.
+- Do not push or rewrite Git history.
+
 ## 4. Task Checklist
 
 ### Phase A – Project Preparation
