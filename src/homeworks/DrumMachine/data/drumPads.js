@@ -1,0 +1,51 @@
+export const drumPads = [
+  {
+    id: 'kick',
+    keyLabel: 'W',
+    keyboardCode: 'KeyW',
+    soundId: 'kick',
+    soundName: 'Kick',
+  },
+  {
+    id: 'snare',
+    keyLabel: 'A',
+    keyboardCode: 'KeyA',
+    soundId: 'snare',
+    soundName: 'Snare',
+  },
+  {
+    id: 'closed-hihat',
+    keyLabel: 'S',
+    keyboardCode: 'KeyS',
+    soundId: 'closed-hihat',
+    soundName: 'Closed Hi-Hat',
+  },
+  {
+    id: 'open-hihat',
+    keyLabel: 'D',
+    keyboardCode: 'KeyD',
+    soundId: 'open-hihat',
+    soundName: 'Open Hi-Hat',
+  },
+  {
+    id: 'clap',
+    keyLabel: 'J',
+    keyboardCode: 'KeyJ',
+    soundId: 'clap',
+    soundName: 'Clap',
+  },
+  {
+    id: 'tom',
+    keyLabel: 'K',
+    keyboardCode: 'KeyK',
+    soundId: 'tom',
+    soundName: 'Tom',
+  },
+  {
+    id: 'crash',
+    keyLabel: 'L',
+    keyboardCode: 'KeyL',
+    soundId: 'crash',
+    soundName: 'Crash',
+  },
+]

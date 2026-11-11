@@ -1,4 +1,4 @@
-﻿# TASK DECOMPOSITION – LAB 03 HOMEWORK 1
+# TASK DECOMPOSITION – LAB 03 HOMEWORK 1
 
 ## 1. Project Information
 
@@ -29,6 +29,8 @@ src/
       components/
         DrumPad.jsx
         DrumPad.module.css
+        DrumKit.jsx
+        DrumKit.module.css
         HitLog.jsx
         HitLog.module.css
         DecibelMeter.jsx
@@ -38,13 +40,79 @@ src/
       audio/
         audioEngine.js
       data/
-        pads.js
+        drumPads.js
       DrumMachine.jsx
       DrumMachine.module.css
   App.jsx
 ```
 
 This structure is a proposal. Only create files when implementing the relevant task.
+
+## 3A. Step 2 Execution Plan
+
+Goal: Build the seven-pad data model, reusable React components, application integration and responsive CSS Modules.
+
+Scope: No Audio Engine, global Keyboard Hook, Hit Log or Decibel Meter implementation in Step 2.
+
+### Task 2.1 – Drum Pad Data
+
+- Status: DONE
+- Related original task: TASK 04
+- Files: `src/homeworks/DrumMachine/data/drumPads.js`
+- Define seven stable pad IDs, visible keys, keyboard codes and sound identifiers.
+- Verify exactly seven unique IDs and keyboard mappings.
+- Commit: `feat(hw1): define seven drum pad configurations`
+
+### Task 2.2 – Reusable DrumPad
+
+- Status: TODO
+- Related original task: TASK 05
+- Files: `components/DrumPad.jsx`
+- Implement a semantic button with props and `aria-pressed`.
+- No audio or global keyboard listeners.
+- Verify lint, build and component semantics.
+- Commit: `feat(hw1): implement accessible DrumPad component`
+
+### Task 2.3 – DrumKit Layout
+
+- Status: TODO
+- Related original tasks: TASK 03 and TASK 05
+- Files: `components/DrumKit.jsx`
+- Render all seven DrumPad components using stable IDs.
+- Use semantic section and heading structure.
+- Verify rendered data, lint and build.
+- Commit: `feat(hw1): compose semantic DrumKit layout`
+
+### Task 2.4 – React App Integration
+
+- Status: TODO
+- Related original task: TASK 03
+- Files: `src/App.jsx`
+- Integrate DrumKit into the existing React application.
+- Preserve Vite configuration, React 19 entry point and StrictMode.
+- Remove only unused Vite starter UI and imports.
+- Verify seven rendered pads, lint, build and browser console.
+- Commit: `feat(hw1): integrate DrumKit into application`
+
+### Task 2.5 – Responsive CSS Modules
+
+- Status: TODO
+- Related original task: TASK 06
+- Files: `components/DrumPad.module.css`, `components/DrumKit.module.css`
+- Apply studio styling using CSS Modules and CSS Custom Properties.
+- Provide visible focus and active-state styles.
+- Verify responsive behavior at 375px and 1440px.
+- Check horizontal overflow and keyboard navigation.
+- Commit: `style(hw1): implement responsive studio drum kit`
+
+### Step 2 Commit Policy
+
+- Target exactly five meaningful implementation commits.
+- Update documentation before implementing features.
+- Include this planning update with the Task 2.1 commit.
+- Review changes and verification results before every commit.
+- Update task statuses only after corresponding work is verified.
+- Do not implement Step 3 functionality.
 
 ## 4. Task Checklist
 
@@ -89,8 +157,8 @@ This structure is a proposal. Only create files when implementing the relevant t
 
 **TASK 04 – Define Drum Pad Configuration**
 
-- Status: TODO
-- Files: `src/homeworks/DrumMachine/data/pads.js`
+- Status: DONE
+- Files: `src/homeworks/DrumMachine/data/drumPads.js`
 - Goal: Define seven pad IDs, labels, sound identifiers and physical keyboard codes.
 - Criteria: Exactly seven unique mappings for KeyW, KeyA, KeyS, KeyD, KeyJ, KeyK and KeyL.
 - Verification: Inspect mapping uniqueness and correctness.
