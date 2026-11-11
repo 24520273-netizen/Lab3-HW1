@@ -141,7 +141,7 @@ Scope: Audio only. Keyboard Hook, Hit Log and Decibel Meter UI belong to later s
 
 ### Task 3.3 – Implement Sound Playback
 
-- Status: TODO
+- Status: DONE
 - Implement playback for all seven sound presets.
 - Support rapid repeated hits and overlapping audio.
 - Handle invalid sound IDs and playback errors.
@@ -302,7 +302,7 @@ Scope: Audio only. Keyboard Hook, Hit Log and Decibel Meter UI belong to later s
 
 **TASK 13 – Implement Distinct Drum Sounds**
 
-- Status: TODO
+- Status: DONE
 - Files: `audio/audioEngine.js`
 - Goal: Generate or play distinct percussion sounds mapped to drum pads.
 - Criteria: Each configured pad produces its intended audible feedback.
