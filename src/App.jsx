@@ -4,18 +4,20 @@ import { drumPads } from './homeworks/DrumMachine/data/drumPads'
 import { createDrumAudioEngine } from './homeworks/DrumMachine/audio/audioEngine'
 import { playDrumSound } from './homeworks/DrumMachine/audio/playDrumSound'
 import { useDrumKeyboard } from './homeworks/DrumMachine/hooks/useDrumKeyboard'
+import HitLog from './homeworks/DrumMachine/components/HitLog'
+import DecibelMeter from './homeworks/DrumMachine/components/DecibelMeter'
+import feedbackStyles from './homeworks/DrumMachine/components/FeedbackPanel.module.css'
 
 const PAD_MAP = new Map(drumPads.map((pad) => [pad.keyboardCode, pad]))
 
 function App() {
-  const [lastTriggeredId, setLastTriggeredId] = useState(null)
+  const [hitHistory, setHitHistory] = useState([])
+  const [analyserNode, setAnalyserNode] = useState(null)
+  const nextHitIdRef = useRef(0)
   const [audioError, setAudioError] = useState('')
   const [pointerActivePadIds, setPointerActivePadIds] = useState([])
   const audioEngineRef = useRef(null)
 
-  const lastTriggeredPad = drumPads.find(
-    (pad) => pad.id === lastTriggeredId
-  )
 
   useEffect(() => {
     return () => {
@@ -54,7 +56,6 @@ function App() {
       return
     }
 
-    setLastTriggeredId(padId)
     setAudioError('')
 
     if (!audioEngineRef.current) {
@@ -73,6 +74,20 @@ function App() {
           engine.getOutputNode(),
           pad.soundId
         )
+
+        const hitId = ++nextHitIdRef.current
+
+        setHitHistory((previous) => [
+          {
+            id: hitId,
+            padId: pad.id,
+            keyLabel: pad.keyLabel,
+            soundName: pad.soundName,
+          },
+          ...previous,
+        ].slice(0, 12))
+
+        setAnalyserNode(engine.getAnalyser())
       })
       .catch((error) => {
         if (audioEngineRef.current === engine) {
@@ -115,11 +130,16 @@ function App() {
         onRelease={handlePointerRelease}
       />
 
-      <p role="status">
-        {lastTriggeredPad
-          ? `Last pad activated: ${lastTriggeredPad.soundName} (${lastTriggeredPad.keyLabel})`
-          : 'No pad has been activated yet.'}
-      </p>
+      <section
+        className={feedbackStyles.panel}
+        aria-label="Drum performance feedback"
+      >
+        <HitLog hits={hitHistory} />
+        <DecibelMeter
+          analyser={analyserNode}
+          lastHitId={hitHistory[0]?.id}
+        />
+      </section>
 
       {audioError && (
         <p role="alert">{audioError}</p>

@@ -1,0 +1,58 @@
+.panel {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.panel h2 {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+}
+
+.reading {
+  margin-bottom: 16px;
+  color: #bfdbfe;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.meter {
+  width: 100%;
+  height: 24px;
+  overflow: hidden;
+  border: 1px solid #64748b;
+  border-radius: 8px;
+  background: #1e293b;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #22c55e, #facc15);
+  transition: width 100ms linear;
+}
+
+.scale {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+  color: #cbd5e1;
+  font-size: 0.75rem;
+}
+
+.description {
+  margin: 18px 0 0;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill {
+    transition: none;
+  }
+}

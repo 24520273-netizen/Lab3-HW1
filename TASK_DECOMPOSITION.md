@@ -210,6 +210,43 @@ Goal: Provide physical keyboard controls for seven Drum Pads without duplicating
 - Follow Implement, Verify, Commit.
 - Do not push or rewrite Git history.
 
+## 3D. Step 5 Visual Feedback and Accessibility
+
+Goal: Add accessible hit history, real digital audio metering and improve drum control accessibility.
+
+### Task 5.1 – Visual Feedback
+
+- Status: TODO
+- Files: HitLog.jsx, HitLog.module.css, DecibelMeter.jsx, DecibelMeter.module.css, FeedbackPanel.module.css, App.jsx, audioEngine.js
+- Record successful audio triggers through the existing handleTrigger callback.
+- Keep at most 12 recent hits with stable IDs.
+- Announce recent activity through output aria-live="polite" with debouncing.
+- Measure output signal using Web Audio AnalyserNode and RMS.
+- Display digital signal level in dBFS, not dB SPL.
+- Throttle React updates and clean up animation frames and timers.
+- Verify mouse, keyboard, rapid hits, meter response, lint and build.
+- Commit: `feat(hw1): add hit history and visual audio meter`
+
+### Task 5.2 – Accessibility Improvements
+
+- Status: TODO
+- Files: DrumPad.jsx, DrumPad.module.css, DrumKit.jsx, DrumKit.module.css, App.jsx
+- Improve accessible names, shortcut instructions and visible pressed feedback.
+- Preserve native buttons, focus-visible and aria-pressed.
+- Verify keyboard navigation, responsive layout, target size and basic contrast.
+- Do not claim complete WCAG conformance before final audit.
+- Commit: `feat(hw1): improve drum kit accessibility`
+
+### Step 5 Constraints
+
+- Preserve existing keyboard and playback logic.
+- No new dependencies.
+- No synthetic or randomly animated audio meter values.
+- No unbounded hit history.
+- No duplicate live announcements.
+- Verify before each commit.
+- Leave full Lighthouse audit for Step 6.
+
 ## 4. Task Checklist
 
 ### Phase A – Project Preparation

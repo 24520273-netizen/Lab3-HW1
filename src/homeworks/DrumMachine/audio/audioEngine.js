@@ -3,6 +3,7 @@ import { stopAllDrumSounds } from './playDrumSound.js'
 export function createDrumAudioEngine() {
   let audioContext = null
   let masterGain = null
+  let analyser = null
   let disposed = false
 
   function getAudioContext() {
@@ -22,7 +23,11 @@ export function createDrumAudioEngine() {
 
       masterGain = audioContext.createGain()
       masterGain.gain.value = 0.65
-      masterGain.connect(audioContext.destination)
+      analyser = audioContext.createAnalyser()
+      analyser.fftSize = 2048
+      analyser.smoothingTimeConstant = 0.65
+      masterGain.connect(analyser)
+      analyser.connect(audioContext.destination)
     }
 
     if (audioContext.state === 'closed') {
@@ -51,6 +56,11 @@ export function createDrumAudioEngine() {
     return masterGain
   }
 
+  function getAnalyser() {
+    getAudioContext()
+    return analyser
+  }
+
   async function dispose() {
     if (disposed) return
 
@@ -58,9 +68,11 @@ export function createDrumAudioEngine() {
 
     const context = audioContext
     const output = masterGain
+    const analysisNode = analyser
 
     audioContext = null
     masterGain = null
+    analyser = null
 
     try {
       if (context && context.state !== 'closed') {
@@ -69,6 +81,10 @@ export function createDrumAudioEngine() {
     } finally {
       if (output) {
         output.disconnect()
+      }
+
+      if (analysisNode) {
+        analysisNode.disconnect()
       }
 
       if (context && context.state !== 'closed') {
@@ -81,6 +97,7 @@ export function createDrumAudioEngine() {
     resume,
     getAudioContext,
     getOutputNode,
+    getAnalyser,
     dispose,
   }
 }
