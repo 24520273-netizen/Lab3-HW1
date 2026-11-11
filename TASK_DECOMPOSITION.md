@@ -480,7 +480,7 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 **TASK 24 – Document Genuine AI Failures**
 
-- Status: TODO
+- Status: IN PROGRESS
 - Files: `AI_FAILURE_AUDIT.md`
 - Goal: Document at least three genuine AI-related failures with causes, evidence, solutions and fix commits.
 - Criteria: All entries represent actual observed problems; no fabricated evidence.
@@ -489,7 +489,7 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 **TASK 25 – Complete Homework Documentation**
 
-- Status: TODO
+- Status: DONE
 - Files: `README.md`, `TASK_DECOMPOSITION.md`
 - Goal: Explain installation, running, keyboard mapping, features, verification and limitations.
 - Criteria: Project can be understood and run using its documentation.
@@ -562,8 +562,8 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 - [x] Lighthouse Accessibility result recorded
 - [ ] WCAG 2.2 AA checks performed
 - [ ] At least three genuine AI failures documented
-- [ ] Final README completed
-- [ ] Final Git history reviewed
+- [x] Final README completed
+- [x] Final Git history reviewed
 
 ## 7. Current Progress
 
@@ -590,7 +590,7 @@ Update this document whenever a task changes status.
 - Commit: `test(hw1): verify drum kit functionality and accessibility`
 
 ### Commit 2 – AI Failure Audit and Submission
-- Status: TODO
+- Status: DONE
 - Document only verified AI-generated failures with reproduction evidence.
 - Aim for three verified failures as required by the Lab rubric.
 - Include related prompts, code, causes, proof, fixes and commit hashes.
@@ -606,3 +606,9 @@ Update this document whenever a task changes status.
 - Lighthouse mobile: Performance 100, Accessibility 100, Best Practices 100, SEO 100 (see evidence/lighthouse-mobile-all-100.png).
 - Pre-fix SEO 82/100: meta description missing and invalid robots.txt (see evidence/lighthouse-seo-82-before.png).
 - Full WCAG 2.2 AA/manual screen-reader conformance: not established by Lighthouse alone.
+
+### Final submission gate
+
+- Two Step 6 commits are planned; both created only after running their verification gates.
+- AI_FAILURE_AUDIT.md records three observed defects. Original AI-output provenance remains incomplete for the two SEO omissions.
+- Lighthouse Accessibility 100 does not prove full WCAG 2.2 AA conformance. Check remaining manual criteria before final submission.
