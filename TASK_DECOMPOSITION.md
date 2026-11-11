@@ -191,7 +191,7 @@ Goal: Provide physical keyboard controls for seven Drum Pads without duplicating
 
 ### Task 4.2 – React Integration and Active States
 
-- Status: TODO
+- Status: DONE
 - Files: `src/App.jsx`, `components/DrumKit.jsx`, `components/DrumPad.jsx`
 - Reuse the existing audio trigger callback.
 - Pass active pad IDs to DrumKit and DrumPad.
@@ -282,7 +282,7 @@ Goal: Provide physical keyboard controls for seven Drum Pads without duplicating
 
 **TASK 07 – Implement Keyboard Hook**
 
-- Status: TODO
+- Status: DONE
 - Files: `hooks/useDrumKeyboard.js`
 - Goal: Register physical keyboard listeners using `KeyboardEvent.code`.
 - Criteria: Recognize all seven specified keys using `keydown`.
@@ -291,7 +291,7 @@ Goal: Provide physical keyboard controls for seven Drum Pads without duplicating
 
 **TASK 08 – Implement Key Release Handling**
 
-- Status: TODO
+- Status: DONE
 - Files: `hooks/useDrumKeyboard.js`, `DrumMachine.jsx`
 - Goal: Support `keyup` and pressed-state release.
 - Criteria: Pad activates on keydown and releases on keyup.
@@ -300,7 +300,7 @@ Goal: Provide physical keyboard controls for seven Drum Pads without duplicating
 
 **TASK 09 – Prevent Repeated Keydown Activation**
 
-- Status: TODO
+- Status: DONE
 - Files: `hooks/useDrumKeyboard.js`
 - Goal: Ignore repeated keydown events using `event.repeat`.
 - Criteria: Holding a key does not generate unwanted repeated hits.
@@ -309,7 +309,7 @@ Goal: Provide physical keyboard controls for seven Drum Pads without duplicating
 
 **TASK 10 – Isolate Form Input Focus**
 
-- Status: TODO
+- Status: DONE
 - Files: `hooks/useDrumKeyboard.js`
 - Goal: Prevent drum shortcuts while typing into input, textarea or select controls.
 - Criteria: Editable controls do not accidentally trigger drum sounds.
@@ -318,7 +318,7 @@ Goal: Provide physical keyboard controls for seven Drum Pads without duplicating
 
 **TASK 11 – Ensure Keyboard Lifecycle Cleanup**
 
-- Status: TODO
+- Status: DONE
 - Files: `hooks/useDrumKeyboard.js`
 - Goal: Ensure correct listener cleanup and avoid stale closures.
 - Criteria: No duplicate listeners after remounting or callback changes.
@@ -347,7 +347,7 @@ Goal: Provide physical keyboard controls for seven Drum Pads without duplicating
 
 **TASK 14 – Connect Drum Pads to Audio**
 
-- Status: IN PROGRESS
+- Status: DONE
 - Files: `DrumMachine.jsx`, `audio/audioEngine.js`
 - Goal: Connect mouse and keyboard activation to audio playback.
 - Criteria: Each valid interaction triggers the correct sound once.
@@ -356,7 +356,7 @@ Goal: Provide physical keyboard controls for seven Drum Pads without duplicating
 
 **TASK 15 – Complete Pointer Interaction**
 
-- Status: TODO
+- Status: DONE
 - Files: `DrumPad.jsx`, `DrumMachine.jsx`
 - Goal: Handle pointer activation and pressed-state release consistently.
 - Criteria: Mouse/touch interaction works and active states do not remain stuck.

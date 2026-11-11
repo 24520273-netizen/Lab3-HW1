@@ -3,7 +3,12 @@ import { drumPads } from '../data/drumPads'
 import DrumPad from './DrumPad'
 import styles from './DrumKit.module.css'
 
-export default function DrumKit({ activePadIds = [], onTrigger }) {
+export default function DrumKit({
+  activePadIds = [],
+  onTrigger,
+  onPress,
+  onRelease,
+}) {
   const headingId = useId()
 
   return (
@@ -19,6 +24,8 @@ export default function DrumKit({ activePadIds = [], onTrigger }) {
               pad={pad}
               isActive={activePadIds.includes(pad.id)}
               onTrigger={onTrigger}
+              onPress={onPress}
+              onRelease={onRelease}
             />
           </li>
         ))}
