@@ -85,7 +85,7 @@ Scope: No Audio Engine, global Keyboard Hook, Hit Log or Decibel Meter implement
 
 ### Task 2.4 – React App Integration
 
-- Status: TODO
+- Status: DONE
 - Related original task: TASK 03
 - Files: `src/App.jsx`
 - Integrate DrumKit into the existing React application.
@@ -148,7 +148,7 @@ Scope: No Audio Engine, global Keyboard Hook, Hit Log or Decibel Meter implement
 
 **TASK 03 – Create Drum Machine App Shell**
 
-- Status: TODO
+- Status: DONE
 - Files: `src/App.jsx`, `src/homeworks/DrumMachine/DrumMachine.jsx`
 - Goal: Establish the main Drum Kit layout using semantic HTML.
 - Criteria: Drum Machine renders without runtime errors.
