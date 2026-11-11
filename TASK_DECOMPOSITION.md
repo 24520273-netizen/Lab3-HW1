@@ -132,7 +132,7 @@ Scope: Audio only. Keyboard Hook, Hit Log and Decibel Meter UI belong to later s
 
 ### Task 3.2 – Implement Audio Engine
 
-- Status: TODO
+- Status: DONE
 - Files: `src/homeworks/DrumMachine/audio/audioEngine.js`
 - Create a reusable Web Audio API engine.
 - Manage a shared AudioContext and initialization.
@@ -293,7 +293,7 @@ Scope: Audio only. Keyboard Hook, Hit Log and Decibel Meter UI belong to later s
 
 **TASK 12 – Implement Audio Engine**
 
-- Status: TODO
+- Status: IN PROGRESS
 - Files: `audio/audioEngine.js`
 - Goal: Provide an audio playback interface based on browser audio capabilities.
 - Criteria: Audio resources are initialized safely and cleaned up when appropriate.
