@@ -150,7 +150,7 @@ Scope: Audio only. Keyboard Hook, Hit Log and Decibel Meter UI belong to later s
 
 ### Task 3.4 – Integrate Audio with React
 
-- Status: TODO
+- Status: DONE
 - Connect playback to the existing DrumKit trigger callback.
 - Preserve existing Step 2 components and keyboard mappings.
 - Support button click, Enter and Space activation.
@@ -311,7 +311,7 @@ Scope: Audio only. Keyboard Hook, Hit Log and Decibel Meter UI belong to later s
 
 **TASK 14 – Connect Drum Pads to Audio**
 
-- Status: TODO
+- Status: IN PROGRESS
 - Files: `DrumMachine.jsx`, `audio/audioEngine.js`
 - Goal: Connect mouse and keyboard activation to audio playback.
 - Criteria: Each valid interaction triggers the correct sound once.
