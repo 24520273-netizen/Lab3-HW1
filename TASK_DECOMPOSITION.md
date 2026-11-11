@@ -114,6 +114,66 @@ Scope: No Audio Engine, global Keyboard Hook, Hit Log or Decibel Meter implement
 - Update task statuses only after corresponding work is verified.
 - Do not implement Step 3 functionality.
 
+## 3B. Step 3 Audio Execution Plan
+
+Goal: Implement seven drum sounds using Web Audio API, reusable playback logic and safe audio resource management.
+
+Scope: Audio only. Keyboard Hook, Hit Log and Decibel Meter UI belong to later steps.
+
+### Task 3.1 – Configure Drum Sound Presets
+
+- Status: DONE
+- Files: `src/homeworks/DrumMachine/data/drumSoundPresets.js`
+- Define seven synthesized drum sound configurations.
+- Preserve existing soundId and keyboard mappings.
+- No external audio files required.
+- Verify preset completeness, uniqueness and valid parameters.
+- Commit: `feat(hw1): configure seven synthesized drum presets`
+
+### Task 3.2 – Implement Audio Engine
+
+- Status: TODO
+- Files: `src/homeworks/DrumMachine/audio/audioEngine.js`
+- Create a reusable Web Audio API engine.
+- Manage a shared AudioContext and initialization.
+- Handle suspended or unavailable audio contexts.
+- Commit: `feat(hw1): implement reusable audio engine`
+
+### Task 3.3 – Implement Sound Playback
+
+- Status: TODO
+- Implement playback for all seven sound presets.
+- Support rapid repeated hits and overlapping audio.
+- Handle invalid sound IDs and playback errors.
+- Verify audio playback independently before React integration.
+- Commit: `feat(hw1): support low latency drum sound playback`
+
+### Task 3.4 – Integrate Audio with React
+
+- Status: TODO
+- Connect playback to the existing DrumKit trigger callback.
+- Preserve existing Step 2 components and keyboard mappings.
+- Support button click, Enter and Space activation.
+- Verify all seven sounds in the browser.
+- Commit: `feat(hw1): connect drum pads to audio playback`
+
+### Task 3.5 – Audio Cleanup and Stability
+
+- Status: TODO
+- Release AudioContext and associated resources appropriately.
+- Avoid duplicate resources in React StrictMode.
+- Verify rapid clicks, errors, mount and unmount behavior.
+- Add appropriate automated tests where feasible.
+- Commit: `fix(hw1): ensure audio lifecycle cleanup and stability`
+
+### Step 3 Git Policy
+
+- Aim for at least five meaningful commits.
+- Verify each task before committing.
+- Do not create empty or artificial commits.
+- Update statuses only after actual verification.
+- Do not push or rewrite Git history without permission.
+
 ## 4. Task Checklist
 
 ### Phase A – Project Preparation
