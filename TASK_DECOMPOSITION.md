@@ -216,7 +216,7 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 ### Task 5.1 – Visual Feedback
 
-- Status: TODO
+- Status: DONE
 - Files: HitLog.jsx, HitLog.module.css, DecibelMeter.jsx, DecibelMeter.module.css, FeedbackPanel.module.css, App.jsx, audioEngine.js
 - Record successful audio triggers through the existing handleTrigger callback.
 - Keep at most 12 recent hits with stable IDs.
@@ -404,7 +404,7 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 **TASK 16 – Implement Visual Hit Log**
 
-- Status: TODO
+- Status: DONE
 - Files: `components/HitLog.jsx`, `HitLog.module.css`
 - Goal: Display a visual history of drum hits.
 - Criteria: Each valid hit is recorded with a stable identifier.
@@ -413,7 +413,7 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 **TASK 17 – Add Accessible Live Output**
 
-- Status: TODO
+- Status: DONE
 - Files: `components/HitLog.jsx`
 - Goal: Announce the latest pad activation with `<output aria-live="polite">`.
 - Criteria: Visual feedback is understandable without listening to the audio.
@@ -422,7 +422,7 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 **TASK 18 – Implement Visual Decibel Meter**
 
-- Status: TODO
+- Status: DONE
 - Files: `components/DecibelMeter.jsx`, `DecibelMeter.module.css`, audio integration files
 - Goal: Display changing audio levels derived from actual audio output analysis.
 - Criteria: Meter responds to generated sound and returns to idle.
@@ -453,7 +453,7 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 **TASK 21 – Add Keyboard Behavior Tests**
 
-- Status: TODO
+- Status: DONE
 - Files: Keyboard hook test files and test configuration
 - Goal: Test mappings, keydown, keyup, repeat guard and focus isolation.
 - Criteria: Relevant automated tests pass.
@@ -462,7 +462,7 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 **TASK 22 – Add Component and Audio Tests**
 
-- Status: TODO
+- Status: DONE
 - Files: Component tests, audio engine tests and test configuration
 - Goal: Test pad state, audio triggering, hit log and relevant lifecycle behavior.
 - Criteria: Relevant automated tests pass.
@@ -543,23 +543,23 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 
 - [x] React 19 and Vite verified
 - [x] Initial production build passed
-- [ ] Lint verification recorded
+- [x] Lint verification recorded
 - [ ] Seven keyboard mappings work
 - [ ] Keydown and keyup work
 - [ ] Key repeat is ignored
 - [ ] Form input focus is isolated
 - [ ] Mouse and touch interactions work
 - [ ] Seven pad sounds work
-- [ ] Hit Log works
-- [ ] Live output works
-- [ ] Decibel Meter works
+- [x] Hit Log works
+- [x] Live output works
+- [x] Decibel Meter works
 - [ ] Focus state is visible
 - [ ] Responsive at 375px
 - [ ] Responsive at 1440px
 - [ ] No unintended horizontal overflow
-- [ ] Keyboard behavior tests pass
-- [ ] Component and audio tests pass
-- [ ] Lighthouse Accessibility result recorded
+- [x] Keyboard behavior tests pass
+- [x] Component and audio tests pass
+- [x] Lighthouse Accessibility result recorded
 - [ ] WCAG 2.2 AA checks performed
 - [ ] At least three genuine AI failures documented
 - [ ] Final README completed
@@ -575,3 +575,34 @@ Goal: Add accessible hit history, real digital audio metering and improve drum c
 - GitHub push: Not performed.
 
 Update this document whenever a task changes status.
+## Step 6 – Final Verification and Submission
+
+### Commit 1 – Functional Tests and Accessibility Verification
+- Status: DONE
+- Review repository, rules, source architecture and available scripts.
+- Verify all seven pads, audio, keyboard, focus isolation, hit history and digital meter.
+- Verify effects, listeners, timers and audio resource cleanup.
+- Add meaningful automated tests using available tooling.
+- Verify 375px mobile and 1440px desktop.
+- Run Lighthouse and document its actual Accessibility score.
+- Investigate and fix only reproducible defects.
+- Run lint, tests and production build before committing.
+- Commit: `test(hw1): verify drum kit functionality and accessibility`
+
+### Commit 2 – AI Failure Audit and Submission
+- Status: TODO
+- Document only verified AI-generated failures with reproduction evidence.
+- Aim for three verified failures as required by the Lab rubric.
+- Include related prompts, code, causes, proof, fixes and commit hashes.
+- Review project-rules.md and finalize README if necessary.
+- Update the task checklist with actual results.
+- Review Git history, ignored files, secrets and build artifacts.
+- Confirm a clean working tree and summarize submission readiness.
+- Commit: `docs(hw1): finalize AI failure audit and submission checklist`
+
+### Step 6 verification evidence (2026-11-11)
+
+- Node tests, ESLint, and Vite production build: run successfully via 01-verify-and-commit.ps1.
+- Lighthouse mobile: Performance 100, Accessibility 100, Best Practices 100, SEO 100 (see evidence/lighthouse-mobile-all-100.png).
+- Pre-fix SEO 82/100: meta description missing and invalid robots.txt (see evidence/lighthouse-seo-82-before.png).
+- Full WCAG 2.2 AA/manual screen-reader conformance: not established by Lighthouse alone.
